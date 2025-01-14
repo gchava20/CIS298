@@ -1,2 +1,3 @@
 print('Answer these questions about your partner: Name and Major? What do they do when they are not here? job, hobbies, other? Fun fact about them? What is the coolest thing they have seen technology do?')
 
+print('Boluwatife is a Software Engineering major.\nWhen she is not in class, she is either working on campus, or reading a book.\nOne fun fact about Boluwatife is that she is an international student.\nShe thinks the coolest thing technology can do is connect people faster.')
