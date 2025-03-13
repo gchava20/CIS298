@@ -22,7 +22,17 @@ class Rotor:
         }
 
         self.notch_pos = {
-        # turns the rotor values
-        
+        # turns the rotor values (historical values)
+            1: 'Q',  # Q to R
+            2: 'E',  # E to F
+            3: 'V',  # V to W
+            4: 'J',  # J to K
+            5: 'Z'   # Z to A
         }
+
+        self.rotor_num = rotor_num
+        self.mapping = self.rotor_mappings[rotor_num]
+        self.notch = self.notch_pos[rotor_num]
+        self.position = start_pos
+        self.ring_setting = 0 
 
