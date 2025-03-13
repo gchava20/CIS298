@@ -34,7 +34,6 @@ class Rotor:
         self.mapping = self.rotor_mappings[rotor_num]
         self.notch = self.notch_pos[rotor_num]
         self.position = start_pos
-        self.ring_setting = 0 
 
     def encode(self, char, forward=True):
         offset_value = ord(char) - ord ('A')
@@ -51,4 +50,8 @@ class Rotor:
 
         return chr(output_offset + ord('A'))
     
+    def rotate(self):
+        # rotate rotor by one
+        self.position = (self.position + 1) % 26
+        return self.position == (ord(self.notch) - ord('A'))
     
