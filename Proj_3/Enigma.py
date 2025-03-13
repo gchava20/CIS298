@@ -36,3 +36,19 @@ class Rotor:
         self.position = start_pos
         self.ring_setting = 0 
 
+    def encode(self, char, forward=True):
+        offset_value = ord(char) - ord ('A')
+
+        if forward:
+            #path moves forward in the rotor
+            shift_index_val = (offset_value + self.position) %26
+            map_char = self.mapping[shift_index_val]
+            output_offset = (ord(map_char) - ord('A') - self.position) % 26
+        else:
+            shift_index_val = (offset_value + self.position) %26
+            index_map = self.mapping.index(chr(shift_index_val + ord('A')))
+            output_offset = (index_map - self.position) % 26
+
+        return chr(output_offset + ord('A'))
+    
+    
