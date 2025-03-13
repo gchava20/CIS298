@@ -1,8 +1,8 @@
 class EnigmaMachine:
-    def __init__(self, rotor_num, rotor_pos,plug_settings):
-        self.rotors = [] #holds rotor
-        self.plugboard = None
-        self. reflector = None
+    def __init__(self, rotor_config, plug_settings, reflector_type='B'):
+        self.rotors = [Rotor(rotor_num, start_pos) for rotor_num, start_pos in rotor_config]
+        self.plugboard = Plugboard(plug_settings)
+        self. reflector = Reflector(reflector_type)
     
     def encode_message(self, message):
 
