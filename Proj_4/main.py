@@ -31,3 +31,15 @@ plt.xticks(rotation=90)
 plt.grid(True)
 plt.show()
 
+
+# V3: Line plot of NO2 levels over time for a specific place
+flushing_data = data[(data['Geo Place Name'] == 'Flushing and Whitestone (CD7)') & (data['Indicator ID'] == 375)]
+flushing_data = flushing_data.sort_values('Start_Date')
+
+plt.figure(figsize=(12, 6))
+plt.plot(flushing_data['Start_Date'], flushing_data['Data Value'], marker='o', linestyle='-', color='red')
+plt.title('NO2 Levels Over Time in Flushing and Whitestone (CD7)')
+plt.xlabel('Date')
+plt.ylabel('NO2 Level (ppb)')
+plt.grid(True)
+plt.show()
