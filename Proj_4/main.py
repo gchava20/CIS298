@@ -1,7 +1,9 @@
-import pandas
-import matplotlib
+import pandas as pd
+import matplotlib as plt
 import csv
 
-with open('Air_Quality.csv', 'r') as file:
-    reader = csv.reader(file)
-    
+data = pd.read_csv('Air_Quality.csv')
+print(data.isnull().sum())
+
+data = data.dropna(subset=['Data Value'])
+
