@@ -17,3 +17,17 @@ plt.xlabel('NO2 Level (ppb)')
 plt.ylabel('Frequency')
 plt.grid(True)
 plt.show()
+
+# V2: Bar chart of average PM 2.5 by Geo Place Name
+pm25_data = data[data['Indicator ID'] == 365]
+average_pm25 = pm25_data.groupby('Geo Place Name')['Data Value'].mean().sort_values(ascending=False)
+
+plt.figure(figsize=(10, 8))
+average_pm25.plot(kind='bar', color='green')
+plt.title('Average PM 2.5 Levels by Geo Place Name')
+plt.xlabel('Geo Place Name')
+plt.ylabel('Average PM 2.5 Level (mcg/m3)')
+plt.xticks(rotation=90)
+plt.grid(True)
+plt.show()
+
